@@ -10,7 +10,9 @@ SELECT genre FROM albums WHERE name = 'Bad';
 
 SELECT 'the 1990s' AS 'Here are the albums from:';
 SELECT name FROM albums WHERE release_date BETWEEN 1990 AND 2000;
+
 SELECT 'Less than 20 million sales' AS 'Here are the albums that have:';
 SELECT name FROM albums WHERE sales < 20;
+
 SELECT 'Rock Albums' AS 'Albums with the genre of ''rock''';
 SELECT name FROM albums WHERE genre = 'Rock';
