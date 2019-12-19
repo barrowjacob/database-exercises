@@ -8,13 +8,13 @@ ORDER BY last_name DESC, first_name DESC;
 SELECT * FROM employees
 WHERE last_name LIKE 'E%'
    OR last_name LIKE '%E';
-SELECT CONCAT(first_name, ' ',  last_name) FROM employees
+SELECT *, CONCAT(first_name, ' ',  last_name) FROM employees
 WHERE last_name LIKE '%E'
   AND last_name LIKE 'E%'
 ORDER BY emp_no DESC;
 SELECT * FROM employees
 WHERE hire_date BETWEEN '1990-01-01' AND '1999-12-31';
-SELECT DATEDIFF(now(), hire_date) FROM employees
+SELECT *, DATEDIFF(now(), hire_date) FROM employees
 WHERE hire_date BETWEEN '1990-01-01' AND '1999-12-31'
   AND birth_date LIKE '%-12-25'
 ORDER BY birth_date, hire_date DESC;
