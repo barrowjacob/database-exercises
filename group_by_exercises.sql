@@ -78,4 +78,5 @@ ORDER BY char_length(last_name) DESC;
 
 SELECT emp_no, from_date, title FROM titles
 WHERE title = 'Senior Engineer'
-ORDER BY from_date, emp_no;
+ORDER BY from_date, emp_no
+LIMIT 1;
