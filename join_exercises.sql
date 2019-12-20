@@ -8,17 +8,17 @@ FROM employees as e
               ON dm.emp_no = e.emp_no
          JOIN departments as d
               ON d.dept_no = dm.dept_no
-WHERE dm.to_date = '9999-01-01'
+WHERE dm.to_date > now()
 ORDER BY dept_name;
 
 
-SELECT CONCAT(e.first_name, ' ', e.last_name) AS full_name, d.dept_name
+SELECT CONCAT(e.first_name, ' ', e.last_name) AS 'full name', d.dept_name
 FROM employees as e
          JOIN dept_manager as dm
               ON dm.emp_no = e.emp_no
          JOIN departments as d
               ON d.dept_no = dm.dept_no
-WHERE dm.to_date = '9999-01-01' AND gender = 'F'
+WHERE dm.to_date > now() AND gender = 'F'
 ORDER BY dept_name;
 
 SELECT t.title, COUNT(*) AS 'count'
@@ -29,10 +29,11 @@ FROM employees as e
               ON de.emp_no = e.emp_no
          JOIN departments as d
               ON d.dept_no = de.dept_no
-WHERE d.dept_name = 'Customer Service' AND de.to_date = '9999-01-01' AND t.to_date = '9999-01-01'
+WHERE d.dept_name = 'Customer Service' AND de.to_date > now() AND t.to_date > now()
 GROUP BY t.title;
 
 
+#Find the current salary of all current managers.
 SELECT * FROM dept_manager;
 SELECT  d.dept_name, CONCAT(e.first_name, ' ', e.last_name) AS 'Manager\'s Name', s.salary
 FROM departments as d
@@ -42,7 +43,7 @@ FROM departments as d
               ON dm.emp_no = s.emp_no
          JOIN employees as e
             ON e.emp_no = dm.emp_no
-WHERE dm.to_date = '9999-01-01' AND s.to_date = '9999-01-01'
+WHERE dm.to_date > now() AND s.to_date > now()
 GROUP BY d.dept_name, s.salary, CONCAT(e.first_name, ' ', e.last_name);
 
 
@@ -61,6 +62,6 @@ FROM departments AS d
         ON de.emp_no = e.emp_no
     JOIN employees AS dme
         ON dm.emp_no = e.emp_no
-WHERE dm.to_date > CURDATE() AND de.to_date > CURDATE()
+WHERE dm.to_date > now() AND de.to_date > now()
 ORDER BY 'Department';
 
