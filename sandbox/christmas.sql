@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS people(
     last_name VARCHAR(100) NOT NULL,
     age INT,
     birthday DATE,
-    nice TINYINT,
+    nice BOOLEAN,
     wishlist VARCHAR(1000),
     PRIMARY KEY(last_name)
 );
