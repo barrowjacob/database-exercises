@@ -1,0 +1,11 @@
+USE spotify_db;
+DROP TABLE IF EXISTS songs;
+CREATE TABLE IF NOT EXISTS song(
+     id INT NOT NULL AUTO_INCREMENT,
+     title VARCHAR(100) NOT NULL,
+     artist VARCHAR(100) NOT NULL,
+     album VARCHAR(100) NOT NULL,
+     genre VARCHAR(50) NOT NULL,
+     duration VARCHAR(10) NOT NULL,
+     PRIMARY KEY(id)
+);

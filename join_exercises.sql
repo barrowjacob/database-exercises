@@ -2,11 +2,12 @@ USE employees;
 
 SELECT * FROM dept_manager;
 # Using the example in the Associative Table Joins section as a guide, write a query that shows each department along with the name of the current manager for that department.
+
 SELECT CONCAT(e.first_name, ' ', e.last_name) AS full_name, d.dept_name
 FROM employees as e
-         JOIN dept_manager as dm
+         JOIN dept_manager AS dm
               ON dm.emp_no = e.emp_no
-         JOIN departments as d
+         JOIN departments AS d
               ON d.dept_no = dm.dept_no
 WHERE dm.to_date > now()
 ORDER BY dept_name;
