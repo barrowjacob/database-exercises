@@ -12,5 +12,5 @@ SELECT COUNT(*) FROM song;
 SELECT artist, COUNT(*) FROM song
 GROUP BY artist
 ORDER BY COUNT(*) desc
-LIMIT 10;
+LIMIT 1;
 
