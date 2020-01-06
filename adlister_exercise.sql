@@ -1,7 +1,3 @@
-SELECT * FROM users
-    JOIN ads AS a
-        ON user_id = users.id;
-
 SELECT email FROM users
     JOIN ads
     ON ads.user_id = users.id

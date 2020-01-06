@@ -7,6 +7,7 @@ VALUES ('jacob', 'sdf@sdsdf.com', '123sdf'),
     ('alyssa', 'kdfk@weri.com', '99idk'),
        ('christian', 'iieke@sdfi.com','99dkei');;
 
+TRUNCATE ads;
 INSERT INTO ads(title, description, user_id)
 VALUES ('mow lawn', 'this is an ad', 1),
        ('housekeeping', 'boop', 1),
@@ -22,14 +23,10 @@ INSERT INTO categories(name)
            ('appliances'),
            ('furniture');
 
+TRUNCATE ad_category;
 INSERT INTO ad_category(ad_id, category_id)
     VALUES(1,1),
            (2,1),
            (3,2),
            (4,4),
-           (5,3),
-           (6, 1),
-           (7, 1),
-           (8, 2),
-           (9,4),
-           (10,3);
+           (5,3);
